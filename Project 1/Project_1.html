@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+*** Program: Project 1
+*** Author : Ulises Marian
+*** Date   : 10/7/2021
+-->
+<html>
+<head>
+<title>Project 1 - Build Your Name</title>
+<h3>Welcome to my Name Page</h3>
+<script type="text/javascript">
+  function first_last_names(firstname, lastname) {
+    //returns a string of the two parameters it takes
+    return `${firstname} ${lastname}`;
+  }
+  function whole_name(fullname) {
+    //writes in the document window, in red, the parameter it takes
+    document.write(`<Font color="blue"> My name in red is: </FONT> \
+    <Font color="red"> ${fullname} </FONT>`);   // backticks when using ${}
+    // the following is using CSS rather than <Font>
+    // document.write(`<span style=\"color:blue\">My name in red is: </span>` +
+    // `<span style=\"color:red\">${fullname}</span>`);
+  }
+</script>
+</head>
+<body>
+  <script type="text/javascript">
+    var fullname;
+    let firstname = "Ulises"
+    let lastname = "Marian"
+    /*
+    call first_last_names(firstname, lastname)
+    assign what it returns to the var fullname
+    call whole_name(fullname) with fullname as the argument
+    */
+    fullname = first_last_names(firstname, lastname);
+    whole_name(fullname);
+  </script>
+</body>
+<p>Thank you!</>
+</html>
