@@ -1,0 +1,84 @@
+<!--
+Programmer: Ulises Marian
+Date : 11/14/2021
+Purpose: Read/Validate/Update HTML INPUT controls
+-->
+
+<HTML>
+<HEAD>
+<TITLE>
+Project 4 - Read/Validate INPUT values
+</TITLE>
+</HEAD>
+<BODY>
+<H3>Project 4 : Read/Validate INPUT values</H3>
+<FORM name="myForm" action="run_server_script.html" onsubmit="return checkform()" method="post">
+<table align=center id="big" border="1"> <tr>
+<td>
+<table align=center id="instructs" border="1" >
+<tr> <td>
+&nbsp;&nbsp;
+========== Instructions =========<BR> &nbsp;&nbsp;
+1. Enter your name in text box.<BR> &nbsp;&nbsp;
+2. Check at least two of the checkboxes.<BR> &nbsp;&nbsp;
+3. Enter sum of checkbox values in Total.<BR> &nbsp;&nbsp;
+4. Select an option color.<BR>
+&nbsp;&nbsp;
+5. Select a month.<BR>
+&nbsp;&nbsp;
+6. Hit Submit to validate data.<BR> &nbsp;&nbsp;
+</td> </tr> <tr>
+<td><BR> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <INPUT type="submit" value="Submit"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <INPUT type="reset" value="Reset">
+<BR><BR>
+</td>
+: Read/Validate/Update HTML INPUT controls
+</tr> </table>
+</td> <td>
+<table align=center id="results" border="1" > <tr>
+<th align=center><b>
+<th align=center><b> </tr>
+<tr>
+<td>Text:</td>
+Input Type:</b></td> Values:</b></td>
+<td><INPUT type=text size=10 name=txtName id=txtname ></td> </tr>
+<tr>
+<td>Checkboxes:</td>
+<td><INPUT type=checkbox size=10 name=chk id=chk1 value='1'>One<BR>
+<INPUT type=checkbox size=10 name=chk id=chk2 value='2'>Two<BR>
+<INPUT type=checkbox size=10 name=chk id=chk3 value='3'>Three<BR>
+<INPUT type=checkbox size=10 name=chk id=chk4 value='4'>Four<BR>
+</td> </tr> <tr>
+<td>Total:</td>
+<td><INPUT type=text size=10 name=txtSum id=totalsum ></td> </tr>
+<tr>
+<td>Option:</td> <td>
+<INPUT type="radio" size=10 name="colors" id=red value='Red'>Red<BR />
+<INPUT type="radio" size=10 name="colors" id=white value='White'>White<BR />
+<INPUT type="radio" size=10 name="colors" id=blue value='Blue'>Blue<BR />
+<INPUT type="radio" size=10 name="colors" id=green value='Green'>Green<BR />
+</td> <tr>
+<td>Select:</td>
+<td><select size=10 name=sels>
+<option size=10 value='January'>January</option>
+<option size=10 value='February'>February</option>
+<option size=10 value='March'>March</option>
+<option size=10 value='April'>April</option>
+<option size=10 value='May'>May</option>
+<option size=10 value='June'>June</option>
+<option size=10 value='July'>July</option>
+<option size=10 value='August'>August</option>
+<option size=10 value='September'>September</option>
+<option size=10 value='October'>October</option>
+<option size=10 value='November'>November</option>
+<option size=10 value='December'>December</option>
+</select>
+</td> </tr> </table>
+</td>
+
+</tr>
+</table>
+</FORM>
+<script type="text/javascript" src="project_4.js"></script> </BODY>
+</HTML>
