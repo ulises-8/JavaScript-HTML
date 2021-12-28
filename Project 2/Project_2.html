@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+*** Program: Project 2
+*** Purpose: create buttons, use onclick, a constructor function and properties
+*** Author : Ulises Marian
+*** Date   : 10/22/2021
+-->
+<html>
+<head>
+<title>Project 2 - Color Counter</title>
+<script type="text/javascript">
+  //increase count each time one of the buttons is pressed
+  var red_counter = 0;
+  var blue_counter = 0;
+  var black_counter = 0;
+  var total_counter = 0;
+
+  //constructor function - to create instances of buttons with properties
+  function createButton(color, numberOfButton, buttonName) {
+    this.color = color;
+    this.numberOfButton = numberOfButton;
+    this.buttonName = buttonName;
+  }
+  //creating instances of createButton()
+  var red_button = new createButton("Red", 1, "red_button");
+  var blue_button = new createButton("Blue", 2, "blue_button");
+  var black_button = new createButton("Black", 3, "black_button");
+
+  //checks which button (color) the user selects, and increase the count
+  function check_color(color, numberOfButton, buttonName) {
+    switch(color) {
+      case red_button.color:
+        red_counter++;
+        total_counter++;
+        // document.write(the_button.buttonName + ": " + red_counter);
+        break;
+      case blue_button.color:
+        blue_counter++;
+        total_counter++
+        // document.write(the_button.buttonName + ": " + blue_counter);
+        break;
+      case black_button.color:
+        black_counter++;
+        total_counter++;
+        // document.write(the_button.buttonName + ": " + black_counter);
+        break;
+    }
+  }
+</script>
+</head>
+<body>
+  <H3>Click on any Color Button one or multiple times.</H3>
+  <!-- red button --> <!-- allowed to hardcode parameters in check_color() -->
+  <form>
+  <input type="button" value="Red" id=1 name="Red Button"
+  onClick="check_color(getElementById('1').value,
+  document.getElementsByTagName('input')[0].id,
+  document.getElementById('1').name)">
+  </form>
+  <p>
+  <!-- blue button -->
+  <form>
+  <input type="button" value="Blue" id=2 name="Blue Button"
+  onclick="check_color(getElementById('2').value,
+  document.getElementsByTagName('input')[0].id,
+  document.getElementById('2').name)">
+  </form>
+  <p>
+  <!-- black button -->
+  <form>
+  <input type="button" value="Black" id=3 name="Black Button",
+   onclick="check_color(getElementById('3').value,
+   document.getElementsByTagName('input')[0].id,
+   document.getElementById('3').name)">
+  </form>
+  <p>
+  <!-- total count of pressed buttons -->
+  <form>
+  <input type="button" value="Show Counts" id=4 onclick="display_counts()">
+  </form>
+  <p id="refresh">Refresh page to start counts from zero.</p>
+
+  <script type="text/javascript">
+  //displays the count of red, blue, black (and total count) buttons clicked
+  function display_counts() {
+    var new_window = window.open("", "_blank");
+    new_window.document.write("Counts of what buttons you pressed: <p>")
+    var buttons_list = [red_button, blue_button, black_button];
+    var counters_list = [red_counter, blue_counter, black_counter];
+    var font_list = ["red", "blue", "black"]
+    for(let i=0; i <= counters_list.length; i++) {
+      for (j=1; j <= counters_list[i]; j++) {
+        new_window.document.write(`<Font color=${font_list[i]}>
+           Pressed ${buttons_list[i].color} Button: ${j} <p></font>`);
+      }
+    }
+    new_window.document.write(`You pressed a total of: ${total_counter} times. <p>`);
+    new_window.document.write("Close the window to continue.");
+  }
+</script>
+</body>
+</html>
